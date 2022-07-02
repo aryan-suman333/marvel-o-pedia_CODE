@@ -1,0 +1,72 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+export default function Navbar(props) {
+
+  const [menu, setMenu] = useState("hidden");
+
+  const toggleMenu = () => {
+    if (menu === "hidden") {
+      document.getElementById("mobile-menu-3").classList.remove("hidden");
+      setMenu("visible");
+    }
+    else {
+      document.getElementById("mobile-menu-3").classList.add("hidden");
+      setMenu("hidden");
+    }
+  }
+  
+  return (
+    <>
+      <nav className="border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-800">
+        <div className="container flex flex-wrap justify-between items-center mx-auto">
+          <Link to="/" className="flex items-center">
+            <img src={require('./logo.png')} className="mr-3 h-6 sm:h-9" alt="" />
+            <span className="self-center text-xl font-semibold whitespace-nowrap text-[#fe0000]">MARVEL-O-PEDIA
+            </span>
+          </Link>
+          <div className="flex md:order-2">
+            <div className="hidden relative md:block">
+              <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd">
+                  </path>
+                </svg>
+              </div>
+              <input type="text" id="search-navbar" onInput={props.filterItems} className="block p-2 pl-10 w-full  rounded-lg border sm:text-sm bg-gray-700 border-red-600 placeholder-gray-400 text-red-500 font-semibold" placeholder="Search..." />
+            </div>
+            <button onClick={toggleMenu} data-collapse-toggle="mobile-menu-3" type="button" className="inline-flex items-center p-2 text-sm  rounded-lg md:hidden  focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600" aria-controls="mobile-menu-3" aria-expanded="false">
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd">
+                </path>
+              </svg>
+              <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd">
+                </path>
+              </svg>
+            </button>
+          </div>
+          <div className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-3">
+            <div className="relative mt-3 md:hidden">
+              <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd">
+                  </path>
+                </svg>
+              </div>
+              <input onInput={props.filterItems} type="text" id="search-navbar" className="block p-2 pl-10 w-full  rounded-lg border  bg-gray-700 border-red-600 placeholder-gray-400 text-red-500 " placeholder="Search..." />
+            </div>
+            <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+              <li>
+                <Link to="/" onClick={props.emptyQuery} className="block py-2 pr-4 pl-3 text-lg  md:border-0 md:p-0 md:hover:text-white text-red-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700">Movies</Link>
+              </li>
+              <li>
+                <Link to="/tvshows" onClick={props.emptyQuery} className="block py-2 pr-4 pl-3 text-lg  md:border-0 md:p-0 md:hover:text-white text-red-500 hover:bg-gray-700 hover:text-white md:hover:bg-transparent border-gray-700">TV Shows</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </>
+  )
+}
