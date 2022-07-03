@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 export default function MovieItem(props) {
 
   const [data, setData] = useState([]);
+  let {keyword, title} = props;
 
   useEffect(() => {
-    let url = `https://mcuapi.herokuapp.com/api/v1/${props.keyword}`;
+    let url = `https://mcuapi.herokuapp.com/api/v1/${keyword}`;
 
     const fetchData = async () => {
       const response = await fetch(url);
@@ -14,13 +15,13 @@ export default function MovieItem(props) {
     }
 
     fetchData();
-  }, [props.keyword]);
+  }, [keyword]);
 
   return (
     <div>
       {data.map((element) => {
-        if (element.title === props.title) {
-          return <div key={props.title} className="h-screen">
+        if (element.title === title) {
+          return <div key={title} className="h-screen">
             <div className="flex flex-col items-center md:my-16 mx-auto rounded-lg border shadow-md md:flex-row md:max-w-4xl  border-gray-700 bg-gray-800">
               <img className="object-cover  rounded-t-lg md:max-h-[566px] md:rounded-none md:rounded-l-lg" src={element.cover_url} alt="" />
               <div className="flex flex-col justify-between p-4 leading-normal">

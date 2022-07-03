@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Movies from './components/Movies';
 import MovieItem from './components/MovieItem';
+import LoadingBar from 'react-top-loading-bar';
 import {
   HashRouter as Router,
   Routes,
@@ -12,6 +13,7 @@ import {
 export default function App() {
 
   const [query, setQuery] = useState("");
+  const [progress, setProgress] = useState(0);
 
   const filterItems = (text) => {
     let lowertext = text.target.value.toLowerCase();
@@ -26,10 +28,11 @@ export default function App() {
     <>
       <Router>
         <div className="bg-black">
+        <LoadingBar color='#f11946' height={3} progress={progress} onLoaderFinished={() => setProgress(0)}/>
           <Navbar filterItems={filterItems} query={query} emptyQuery={emptyQuery}/>
           <Routes>
-            <Route exact path="/" element={<Movies key="movies" query={query} keyword="movies" />} />
-            <Route exact path="/tvshows" element={<Movies key="tvshows" query={query} keyword="tvshows" />} />
+            <Route exact path="/" element={<Movies key="movies" setProgress={setProgress} query={query} keyword="movies" />} />
+            <Route exact path="/tvshows" element={<Movies key="tvshows" setProgress={setProgress} query={query} keyword="tvshows" />} />
             <Route exact path="/m/Iron%20Man" element={<MovieItem key="Iron Man" title="Iron Man" keyword="movies" />} />
             <Route exact path="/m/The%20Incredible%20Hulk" element={<MovieItem key="The Incredible Hulk" title="The Incredible Hulk" keyword="movies" />} />
             <Route exact path="/m/Iron%20Man%202" element={<MovieItem key="Iron Man 2" title="Iron Man 2" keyword="movies" />} />
