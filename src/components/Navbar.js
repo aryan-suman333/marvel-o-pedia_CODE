@@ -17,6 +17,7 @@ export default function Navbar(props) {
   }
   
   const filterItems = (event) =>{
+    window.scrollTo(0,0);
     if(event.type === "click"){
       props.emptyQuery();
       let inputs = document.getElementsByTagName("input");
