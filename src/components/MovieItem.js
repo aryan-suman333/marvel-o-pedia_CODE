@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import LoadingBar from 'react-top-loading-bar';
 
 export default function MovieItem(props) {
 
   const [data, setData] = useState([]);
+  const [progress, setProgress] = useState(0);
   let {keyword, title} = props;
 
   useEffect(() => {
@@ -10,15 +12,18 @@ export default function MovieItem(props) {
 
     const fetchData = async () => {
       const response = await fetch(url);
+      setProgress(50);
       const data = await response.json();
+      setProgress(100);
       setData(data.data);
     }
-
+    setProgress(30);
     fetchData();
   }, [keyword]);
 
   return (
     <div>
+      <LoadingBar color='#f11946' height={3} progress={progress} onLoaderFinished={() => setProgress(0)}/>
       {data.map((element) => {
         if (element.title === title) {
           return <div key={title} className="h-screen">
