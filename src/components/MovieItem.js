@@ -27,9 +27,9 @@ export default function MovieItem(props) {
       {data.map((element) => {
         if (element.title === title) {
           return <div key={title} className="h-screen">
-            <div className="flex flex-col items-center md:my-16 mx-auto rounded-lg border shadow-md md:flex-row md:max-w-4xl  border-gray-700 bg-gray-800">
+            <div className="flex flex-col items-center md:my-16 my-8 mx-auto rounded-lg md:border shadow-md md:flex-row md:max-w-4xl  md:border-gray-700 md:bg-gray-800 bg-black">
             <a href={element.cover_url} className="md:min-w-[382px]" target="_blank" rel="noreferrer">
-              <img className="object-cover rounded-t-lg md:max-h-[566px] md:rounded-none md:rounded-l-lg" src={element.cover_url} alt="" />
+              <img className="object-cover rounded-t-lg max-h-[566px] md:rounded-none md:rounded-l-lg" src={element.cover_url} alt="" />
             </a>
               <div className="flex flex-col justify-between p-4 leading-normal">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight  text-white">{element.title}</h5>
