@@ -12,8 +12,8 @@ export default function ex(props) {
           <img className="rounded-t-lg" src={imgUrl} alt="" />
         </a>
         <div className="p-5">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">{title}{year ? " - " + year : null}</h5>
-          <p className="mb-3 font-normal  text-gray-400">{description}...</p>
+          <h5 className="mb-2 text-2xl tracking-normal font-bold text-white">{title}{year ? " - " + year : null}</h5>
+          <p className="mb-3 font-normal  text-gray-400">{description!=="ull"?description:""}...</p>
           <div>
             <Link to={`/m/${title}`} className="inline-flex mr-3 items-center py-2 px-3 text-sm font-medium text-center text-white  rounded-lg  focus:ring-4 focus:outline-none  bg-red-600 hover:bg-red-700 focus:ring-red-800">
             More details

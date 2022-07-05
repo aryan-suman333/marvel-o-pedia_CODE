@@ -23,7 +23,7 @@ export default function Movies(props) {
   
   return (
     <div className="xl:mx-32 lg:mx-28 md:mx-16 sm:mx-32 mx-8 min-h-screen">
-      <h1 className="text-3xl text-center mt-4 text-red-600"><strong>MARVEL {keyword === "movies" ? "MOVIES" : "TV SHOWS"}</strong></h1>
+      <h1 className="text-3xl tracking-normal text-center mt-4 text-red-600"><strong>MARVEL {keyword === "movies" ? "MOVIES" : "TV SHOWS"}</strong></h1>
       <div className="xl:grid xl:grid-cols-3 md:gap-5 md:grid md:grid-cols-2">
         {data.filter(element => {
           if (query === '' || element.title.toLowerCase().includes(query)) {
