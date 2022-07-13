@@ -37,7 +37,7 @@ export default function MovieItem(props) {
                 <p className="mb-1 text-sm text-gray-400"><span className="font-semibold">Release Date: </span>{element.release_date}</p>
                 <p className="mb-1 font-normal text-gray-400"><span className="font-semibold">Director: </span>{element.directed_by}</p>
                 {keyword === "movies"&& element.box_office !== "0"?<p className="mb-3 font-normal text-gray-400"><span className="font-semibold">Box Office Collection: </span>{(parseInt(element.box_office) / 10000000).toFixed(2)} cr$</p>:null}
-                {keyword === "tvshows"?<p className="mb-3 font-normal text-gray-400"><span className="font-semibold">Number of Episodes: </span>{element.number_episodes}</p>:null}
+                {keyword === "tvshows" && element.number_episodes !== 0?<p className="mb-3 font-normal text-gray-400"><span className="font-semibold">Number of Episodes: </span>{element.number_episodes}</p>:null}
                 <p className="mb-3 font-normal text-gray-400">{element.overview}</p>
                 <a href={element.trailer_url} className="inline-flex my-2 w-36 items-center py-2 px-3 text-sm font-medium text-center text-white rounded-lg  focus:ring-4 focus:outline-none bg-red-600 hover:bg-red-700 focus:ring-red-800">
                   Watch Trailer

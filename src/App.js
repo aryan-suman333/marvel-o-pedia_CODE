@@ -75,7 +75,14 @@ export default function App() {
             <Route exact path="/m/Hawkeye" element={<MovieItem key="Hawkeye" title="Hawkeye" keyword="tvshows" />} />
             <Route exact path="/m/Moon%20Knight" element={<MovieItem key="Moon Knight" title="Moon Knight" keyword="tvshows" />} />
             <Route exact path="/m/Ms.%20Marvel" element={<MovieItem key="Ms. Marvel" title="Ms. Marvel" keyword="tvshows" />} />
+            <Route exact path="/m/I%20Am%20Groot" element={<MovieItem key="I Am Groot" title="I Am Groot" keyword="tvshows" />} />
             <Route exact path="/m/She%20Hulk" element={<MovieItem key="She Hulk" title="She Hulk" keyword="tvshows" />} />
+            <Route exact path="/m/Secret%20Invasion" element={<MovieItem key="Secret Invasion" title="Secret Invasion" keyword="tvshows" />} />
+            <Route exact path="/m/Ironheart" element={<MovieItem key="Ironheart" title="Ironheart" keyword="tvshows" />} />
+            <Route exact path="/m/Armor%20Wars" element={<MovieItem key="Armor Wars" title="Armor Wars" keyword="tvshows" />} />
+            <Route exact path="/m/The%20Guardians%20of%20the%20Galaxy%20Holiday%20Special" element={<MovieItem key="The Guardians of the Galaxy Holiday Special" title="The Guardians of the Galaxy Holiday Special" keyword="tvshows" />} />
+            <Route exact path="/m/Echo" element={<MovieItem key="Echo" title="Echo" keyword="tvshows" />} />
+            <Route exact path="/m/Agatha:%20House%20of%20Harkness" element={<MovieItem key="Agatha: House of Harkness" title="Agatha: House of Harkness" keyword="tvshows" />} />
           </Routes>
         </div>
       </Router>
