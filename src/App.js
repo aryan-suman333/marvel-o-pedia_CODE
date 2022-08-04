@@ -63,11 +63,15 @@ export default function App() {
             <Route exact path="/m/Doctor%20Strange%20in%20the%20Multiverse%20of%20Madness" element={<MovieItem key="Doctor Strange in the Multiverse of Madness" title="Doctor Strange in the Multiverse of Madness" keyword="movies" />} />
             <Route exact path="/m/Thor:%20Love%20and%20Thunder" element={<MovieItem key="Thor: Love and Thunder" title="Thor: Love and Thunder" keyword="movies" />} />
             <Route exact path="/m/Black%20Panther:%20Wakanda%20Forever" element={<MovieItem key="Black Panther: Wakanda Forever" title="Black Panther: Wakanda Forever" keyword="movies" />} />
+            <Route exact path="/m/Ant-Man%20and%20The%20Wasp:%20Quantumania" element={<MovieItem key="Ant-Man and The Wasp: Quantumania" title="Ant-Man and The Wasp: Quantumania" keyword="movies" />} />
+            <Route exact path="/m/Guardians%20of%20the%20Galaxy%20Vol.%203" element={<MovieItem key="Guardians of the Galaxy Vol. 3" title="Guardians of the Galaxy Vol. 3" keyword="movies" />} />
             <Route exact path="/m/The%20Marvels" element={<MovieItem key="The Marvels" title="The Marvels" keyword="movies" />} />
             <Route exact path="/m/Blade" element={<MovieItem key="Blade" title="Blade" keyword="movies" />} />
-            <Route exact path="/m/Ant-Man%20and%20The%20Wasp:%20Quantumania" element={<MovieItem key="Ant-Man and The Wasp: Quantumania" title="Ant-Man and The Wasp: Quantumania" keyword="movies" />} />
+            <Route exact path="/m/Captain%20America:%20New%20World%20Order" element={<MovieItem key="Captain America: New World Order" title="Captain America: New World Order" keyword="movies" />} />
+            <Route exact path="/m/Thunderbolts" element={<MovieItem key="Thunderbolts" title="Thunderbolts" keyword="movies" />} />
             <Route exact path="/m/Fantastic%20Four" element={<MovieItem key="Fantastic Four" title="Fantastic Four" keyword="movies" />} />
-            <Route exact path="/m/Guardians%20of%20the%20Galaxy%20Vol.%203" element={<MovieItem key="Guardians of the Galaxy Vol. 3" title="Guardians of the Galaxy Vol. 3" keyword="movies" />} />
+            <Route exact path="/m/Avengers:%20The%20Kang%20Dynasty" element={<MovieItem key="Avengers: The Kang Dynasty" title="Avengers: The Kang Dynasty" keyword="movies" />} />
+            <Route exact path="/m/Avengers:%20Secret%20Wars" element={<MovieItem key="Avengers: Secret Wars" title="Avengers: Secret Wars" keyword="movies" />} />
             <Route exact path="/m/WandaVision" element={<MovieItem key="WandaVision" title="WandaVision" keyword="tvshows" />} />
             <Route exact path="/m/The%20Falcon%20and%20The%20Winter%20Soldier" element={<MovieItem key="The Falcon and The Winter Soldier" title="The Falcon and The Winter Soldier" keyword="tvshows" />} />
             <Route exact path="/m/Loki" element={<MovieItem key="Loki" title="Loki" keyword="tvshows" />} />
@@ -76,13 +80,14 @@ export default function App() {
             <Route exact path="/m/Moon%20Knight" element={<MovieItem key="Moon Knight" title="Moon Knight" keyword="tvshows" />} />
             <Route exact path="/m/Ms.%20Marvel" element={<MovieItem key="Ms. Marvel" title="Ms. Marvel" keyword="tvshows" />} />
             <Route exact path="/m/I%20Am%20Groot" element={<MovieItem key="I Am Groot" title="I Am Groot" keyword="tvshows" />} />
-            <Route exact path="/m/She%20Hulk" element={<MovieItem key="She Hulk" title="She Hulk" keyword="tvshows" />} />
-            <Route exact path="/m/Secret%20Invasion" element={<MovieItem key="Secret Invasion" title="Secret Invasion" keyword="tvshows" />} />
-            <Route exact path="/m/Ironheart" element={<MovieItem key="Ironheart" title="Ironheart" keyword="tvshows" />} />
-            <Route exact path="/m/Armor%20Wars" element={<MovieItem key="Armor Wars" title="Armor Wars" keyword="tvshows" />} />
+            <Route exact path="/m/She%20Hulk:%20Attorney%20at%20Law" element={<MovieItem key="She Hulk: Attorney at Law" title="She Hulk: Attorney at Law" keyword="tvshows" />} />
             <Route exact path="/m/The%20Guardians%20of%20the%20Galaxy%20Holiday%20Special" element={<MovieItem key="The Guardians of the Galaxy Holiday Special" title="The Guardians of the Galaxy Holiday Special" keyword="tvshows" />} />
+            <Route exact path="/m/Secret%20Invasion" element={<MovieItem key="Secret Invasion" title="Secret Invasion" keyword="tvshows" />} />
             <Route exact path="/m/Echo" element={<MovieItem key="Echo" title="Echo" keyword="tvshows" />} />
-            <Route exact path="/m/Agatha:%20House%20of%20Harkness" element={<MovieItem key="Agatha: House of Harkness" title="Agatha: House of Harkness" keyword="tvshows" />} />
+            <Route exact path="/m/Ironheart" element={<MovieItem key="Ironheart" title="Ironheart" keyword="tvshows" />} />
+            <Route exact path="/m/Daredevil:%20Born%20Again" element={<MovieItem key="Daredevil: Born Again" title="Daredevil: Born Again" keyword="tvshows" />} />
+            <Route exact path="/m/Agatha:%20Coven%20of%20Chaos" element={<MovieItem key="Agatha: Coven of Chaos" title="Agatha: Coven of Chaos" keyword="tvshows" />} />
+            <Route exact path="/m/Armor%20Wars" element={<MovieItem key="Armor Wars" title="Armor Wars" keyword="tvshows" />} />
           </Routes>
         </div>
       </Router>
