@@ -70,6 +70,7 @@ export default function App() {
             <Route exact path="/m/Captain%20America:%20New%20World%20Order" element={<MovieItem key="Captain America: New World Order" title="Captain America: New World Order" keyword="movies" />} />
             <Route exact path="/m/Thunderbolts" element={<MovieItem key="Thunderbolts" title="Thunderbolts" keyword="movies" />} />
             <Route exact path="/m/Fantastic%20Four" element={<MovieItem key="Fantastic Four" title="Fantastic Four" keyword="movies" />} />
+            <Route exact path="/m/Untitled%20Deadpool%20Movie" element={<MovieItem key="Untitled Deadpool Movie" title="Untitled Deadpool Movie" keyword="movies" />} />
             <Route exact path="/m/Avengers:%20The%20Kang%20Dynasty" element={<MovieItem key="Avengers: The Kang Dynasty" title="Avengers: The Kang Dynasty" keyword="movies" />} />
             <Route exact path="/m/Avengers:%20Secret%20Wars" element={<MovieItem key="Avengers: Secret Wars" title="Avengers: Secret Wars" keyword="movies" />} />
             <Route exact path="/m/WandaVision" element={<MovieItem key="WandaVision" title="WandaVision" keyword="tvshows" />} />
@@ -81,6 +82,7 @@ export default function App() {
             <Route exact path="/m/Ms.%20Marvel" element={<MovieItem key="Ms. Marvel" title="Ms. Marvel" keyword="tvshows" />} />
             <Route exact path="/m/I%20Am%20Groot" element={<MovieItem key="I Am Groot" title="I Am Groot" keyword="tvshows" />} />
             <Route exact path="/m/She%20Hulk:%20Attorney%20at%20Law" element={<MovieItem key="She Hulk: Attorney at Law" title="She Hulk: Attorney at Law" keyword="tvshows" />} />
+            <Route exact path="/m/Werewolf%20By%20Night" element={<MovieItem key="Werewolf By Night" title="Werewolf By Night" keyword="tvshows" />} />
             <Route exact path="/m/The%20Guardians%20of%20the%20Galaxy%20Holiday%20Special" element={<MovieItem key="The Guardians of the Galaxy Holiday Special" title="The Guardians of the Galaxy Holiday Special" keyword="tvshows" />} />
             <Route exact path="/m/Secret%20Invasion" element={<MovieItem key="Secret Invasion" title="Secret Invasion" keyword="tvshows" />} />
             <Route exact path="/m/Echo" element={<MovieItem key="Echo" title="Echo" keyword="tvshows" />} />
