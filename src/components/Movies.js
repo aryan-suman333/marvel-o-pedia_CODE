@@ -26,15 +26,15 @@ export default function Movies(props) {
       <h1 className="text-3xl tracking-normal text-center mt-4 text-red-600"><strong>MARVEL {keyword === "movies" ? "MOVIES" : "TV SHOWS"}</strong></h1>
       <div className="xl:grid xl:grid-cols-3 md:gap-5 md:grid md:grid-cols-2">
         {data.filter(element => {
-          if (query === '' || element.title.toLowerCase().includes(query)) {
+          if (query === '' || element.title.toLowerCase().includes(query) || JSON.stringify(element.release_date).slice(1, 5).includes(query)) {
             emptyText = "hide";
             return element;
           }
           emptyText = emptyText !== "hide"?"show":"hide";
           return null;
         }).map((element) => {
-          return <div className="my-4" key={element.id}>
-            <MoviesComp title={element.title} description={JSON.stringify(element.overview).slice(1,250)} imgUrl={element.cover_url} trailer_url={element.trailer_url} year={element.release_date ? JSON.stringify(element.release_date).slice(1, 5) : null} />
+          return <div className="my-4">
+            <MoviesComp id = {element.id} imdb_id = {element.imdb_id} title={element.title} description={JSON.stringify(element.overview).slice(1,250)} imgUrl={element.cover_url} trailer_url={element.trailer_url} year={element.release_date ? JSON.stringify(element.release_date).slice(1, 5) : null} />
           </div>
         })}
       </div>

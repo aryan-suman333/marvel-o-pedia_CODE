@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function ex(props) {
 
-  let {imgUrl, title, year, description, trailer_url} = props;
+  let {imgUrl, id, imdb_id, title, year, description, trailer_url} = props;
 
   return (
     <div>
@@ -15,7 +15,7 @@ export default function ex(props) {
           <h5 className="mb-2 text-2xl tracking-normal font-bold text-white">{title}{year ? " - " + year : null}</h5>
           <p className="mb-3 font-normal  text-gray-400">{description!=="ull"?description:""}...</p>
           <div>
-            <Link to={`/m/${title}`} className="inline-flex mr-3 items-center py-2 px-3 text-sm font-medium text-center text-white  rounded-lg  focus:ring-4 focus:outline-none  bg-red-600 hover:bg-red-700 focus:ring-red-800">
+            <Link to={`/m/${id+imdb_id}`} className="inline-flex mr-3 items-center py-2 px-3 text-sm font-medium text-center text-white  rounded-lg  focus:ring-4 focus:outline-none  bg-red-600 hover:bg-red-700 focus:ring-red-800">
             More details
               <svg className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd">
