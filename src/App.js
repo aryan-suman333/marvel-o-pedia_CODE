@@ -23,8 +23,10 @@ export default function App() {
   const emptyQuery = () => {
     setQuery("");
   }
+
   const [moviesData, setMoviesData] = useState([]);
   const [TvshowsData, setTvshowsData] = useState([]);
+
   useEffect(() => {
     let moviesUrl = `https://mcuapi.herokuapp.com/api/v1/movies`;
     let tvshowsUrl = `https://mcuapi.herokuapp.com/api/v1/tvshows`;
@@ -33,9 +35,11 @@ export default function App() {
       const moviesResponse = await fetch(moviesUrl);
       const tvshowsResponse = await fetch(tvshowsUrl);
       setProgress(50);
+
       const moviesData = await moviesResponse.json();
       const TvshowsData = await tvshowsResponse.json();
       setProgress(100);
+
       setMoviesData(moviesData.data);
       setTvshowsData(TvshowsData.data);
     };
@@ -48,16 +52,22 @@ export default function App() {
       <Router>
         <div className="bg-black">
         <LoadingBar color='#f11946' height={3} progress={progress} onLoaderFinished={() => setProgress(0)}/>
+
           <Navbar filterItems={filterItems} query={query} emptyQuery={emptyQuery}/>
+
           <Routes>
-            <Route exact path="/" element={<Movies key="movies" setProgress={setProgress} query={query} keyword="movies" />} />
-            <Route exact path="/tvshows" element={<Movies key="tvshows" setProgress={setProgress} query={query} keyword="tvshows" />} />
+            <Route exact path="/" element={<Movies key="movies" setProgress={setProgress} query={query} keyword="movies" data={moviesData} />} />
+
+            <Route exact path="/tvshows" element={<Movies key="tvshows" setProgress={setProgress} query={query} keyword="tvshows" data={TvshowsData} />} />
+
             {moviesData.map((element) => {
-              return <Route exact path={`/m/${element.id+element.imdb_id}`} element={<MovieItem key={element.id+element.imdb_id} id={element.id} keyword="movies" data={moviesData} />} />
+              return <Route exact path={`/m/${element.id+element.imdb_id}`} element={<MovieItem key={element.id+element.imdb_id} element={element} keyword="movies" />} />
             })}
+
             {TvshowsData.map((element) => {
-              return <Route exact path={`/m/${element.id+element.imdb_id}`} element={<MovieItem key={element.id+element.imdb_id} id={element.id} keyword="tvshows" data={TvshowsData} />} />
+              return <Route exact path={`/m/${element.id+element.imdb_id}`} element={<MovieItem key={element.id+element.imdb_id} element={element} keyword="tvshows" />} />
             })}
+            
           </Routes>
         </div>
       </Router>
